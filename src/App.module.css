@@ -1,0 +1,36 @@
+.App {
+  max-height: 100vh;
+  /* width: 100vw; */
+  background-image: url("https://images.unsplash.com/photo-1614680376408-81e91ffe3db7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #131c21;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* ::-webkit-scrollbar-track-piece:end {
+  background-color: transparent;
+  margin-bottom: 220px;
+}
+
+::-webkit-scrollbar-track-piece:start {
+  background-color: transparent;
+  margin-top: 220px;
+} */

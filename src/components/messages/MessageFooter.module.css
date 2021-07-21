@@ -1,0 +1,43 @@
+.MessageFooter {
+  /* background-color: #2a2f32; */
+  background-color: #2a2f32a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  -webkit-backdrop-filter: blur(10px);
+}
+.MessageFooter form {
+  background-color: rgba(255, 255, 255, 0.63);
+  /* background-color: #323739; */
+  width: 95%;
+  height: 35px;
+  border-radius: 20px;
+  padding: 0.3rem;
+  /* color: #767a7c; */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.MessageFooter form button {
+  margin-right: 0.5rem;
+  color: black;
+  /* color: #767a7c; */
+  /* background-color: #323739; */
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.MessageFooter form input {
+  /* background-color: #323739; */
+  background-color: transparent;
+  padding: 0 0.5rem;
+  outline: none;
+  border: none;
+  /* color: white; */
+  color: black;
+}

@@ -1,0 +1,34 @@
+.Layout {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 2fr;
+  max-height: 100vh;
+}
+.Group {
+  border-right: 1px solid #30383d;
+  background-color: #131c21af;
+}
+
+.ChatSearch {
+  border-left: 1px solid #30383d;
+  /* background-color: #131c21; */
+  background-color: #131c21af;
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .Layout {
+    grid-template-columns: 1fr;
+    background-color: #131c21af;
+    height: 100vh;
+  }
+  .Group {
+    display: none;
+  }
+  .Message {
+    display: none;
+  }
+  .ChatSearch {
+    display: none;
+  }
+}

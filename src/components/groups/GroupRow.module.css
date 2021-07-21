@@ -1,0 +1,70 @@
+.GroupRow {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 60px 1fr 60px;
+  grid-template-columns: minmax(0, 60px) 1fr 60px;
+  grid-template-rows: 30px 30px;
+  column-gap: 10px;
+  text-decoration: none;
+  /* background-color: #131c21; */
+  background-color: #131c21af;
+  padding: 1rem 0.5rem;
+  background-size: 100% 5px;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .GroupRow:hover {
+    background-color: #50575a;
+    position: relative;
+  }
+  .GroupRow:hover .GroupRowArrow {
+    display: block;
+  }
+  .GroupRow:hover .GroupRowNo {
+    width: 80%;
+  }
+}
+
+.GroupRowImg {
+  width: 100%;
+  border-radius: 50%;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+}
+
+.GroupRowImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.GroupRowTitle {
+  color: #ebecee;
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+.GroupRowTime {
+  color: #888c8f;
+  text-transform: uppercase;
+}
+.GroupRowNo {
+  color: #888c8f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid-column: 2/-1;
+  border-bottom: 1px solid #30383d;
+  padding: 1.29rem 0rem;
+  align-self: center;
+}
+
+.GroupRowArrow {
+  justify-self: center;
+  display: none;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  color: #888c8f;
+}

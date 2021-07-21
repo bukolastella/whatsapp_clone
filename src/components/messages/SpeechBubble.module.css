@@ -1,0 +1,79 @@
+.SpeechSent,
+.SpeechReceived {
+  width: 300px;
+  margin: 10px 0;
+  border-radius: 10px;
+  background: #056162;
+  color: rgb(243, 236, 236);
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  font-family: arial;
+  position: relative;
+}
+.SpeechReceived {
+  background-color: #262d31;
+  align-self: flex-start;
+}
+.SpeechSent {
+  align-self: flex-end;
+  /* margin-left: 40px; */
+}
+.SpeechReceived:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #262d31;
+  border-top: 15px solid #262d31;
+  border-bottom: 15px solid transparent;
+  left: -10px;
+  top: 0px;
+}
+
+.SpeechSent:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid #056162;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #056162;
+  border-bottom: 15px solid transparent;
+  right: -10px;
+  top: 0px;
+}
+.SpeechBubbleGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20px 1fr;
+  background-color: #056162;
+}
+.SpeechBubbleGrid span:nth-child(1) {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  justify-self: flex-start;
+  color: #888c8f;
+  font-size: 0.7rem;
+}
+
+.SpeechBubbleGrid div {
+  grid-column: 1/-1;
+  grid-row: 2/-1;
+  text-align: left;
+}
+.SpeechBubbleTime {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  text-transform: uppercase;
+  color: #888c8f;
+  font-size: 0.7rem;
+}
+@media (max-width: 335px) {
+  .SpeechReceived,
+  .SpeechSent {
+    align-self: center;
+  }
+}

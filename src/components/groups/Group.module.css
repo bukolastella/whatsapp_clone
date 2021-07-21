@@ -1,0 +1,4 @@
+.GroupRow {
+  overflow-y: auto;
+  height: calc(100vh - 116px);
+}

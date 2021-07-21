@@ -1,0 +1,14 @@
+.GroupHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+  /* background-color: #00bfa5; */
+  background-color: #2a2f32;
+  color: #898e91;
+}
+
+.GroupFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

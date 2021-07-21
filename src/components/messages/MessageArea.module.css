@@ -1,0 +1,16 @@
+.MessageArea {
+  height: calc(100vh - 131px);
+  height: -moz-calc(100vh- 131px);
+  height: -webkit-calc(100vh - 131px);
+  background-color: #131c21af;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-backdrop-filter: blur(10px);
+}
+@media (max-width: 335px) {
+  .MessageArea {
+    padding: 1rem 0;
+  }
+}

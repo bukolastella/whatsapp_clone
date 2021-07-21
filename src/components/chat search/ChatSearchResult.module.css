@@ -1,0 +1,11 @@
+.ChatSearchResult {
+  text-transform: capitalize;
+  color: #767a7c;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-bottom: 1px solid #30383d;
+}
+.ChatSearchResult span:nth-last-child(1) {
+  margin-left: 1rem;
+}

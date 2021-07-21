@@ -1,0 +1,33 @@
+.Search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #131c21;
+  border-bottom: 1px solid #30383d;
+}
+.SearchForm {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  background-color: #323739;
+  width: 95%;
+  height: 35px;
+  border-radius: 20px;
+  padding: 0.3rem;
+  color: #767a7c;
+}
+.SearchForm span {
+  justify-self: center;
+}
+.SearchForm input {
+  background-color: #323739;
+  padding: 0 0.5rem;
+  outline: none;
+  border: none;
+  color: white;
+}
+@media (max-width: 830px) {
+  .SearchForm span:nth-child(3) {
+    justify-self: flex-start;
+  }
+}
