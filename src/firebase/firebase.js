@@ -3,7 +3,7 @@ import "firebase/firestore";
 import "firebase/analytics";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyAp9x80j-zkREby0B2iFZIpQKfTQLbboEw",
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "whatsapp-clone-a8adf.firebaseapp.com",
   projectId: "whatsapp-clone-a8adf",
   storageBucket: "whatsapp-clone-a8adf.appspot.com",
