@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/whatsapp_clone/static/css/main.3617d73d.chunk.css",
+    "main.css": "/whatsapp_clone/static/css/main.92de2ed5.chunk.css",
     "main.js": "/whatsapp_clone/static/js/main.acd87e60.chunk.js",
     "main.js.map": "/whatsapp_clone/static/js/main.acd87e60.chunk.js.map",
     "runtime-main.js": "/whatsapp_clone/static/js/runtime-main.d1f1c88c.js",
@@ -10,14 +10,14 @@
     "static/js/3.e60a7919.chunk.js": "/whatsapp_clone/static/js/3.e60a7919.chunk.js",
     "static/js/3.e60a7919.chunk.js.map": "/whatsapp_clone/static/js/3.e60a7919.chunk.js.map",
     "index.html": "/whatsapp_clone/index.html",
-    "static/css/main.3617d73d.chunk.css.map": "/whatsapp_clone/static/css/main.3617d73d.chunk.css.map",
+    "static/css/main.92de2ed5.chunk.css.map": "/whatsapp_clone/static/css/main.92de2ed5.chunk.css.map",
     "static/js/2.b078653a.chunk.js.LICENSE.txt": "/whatsapp_clone/static/js/2.b078653a.chunk.js.LICENSE.txt",
     "static/media/11.0a7a1125.png": "/whatsapp_clone/static/media/11.0a7a1125.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d1f1c88c.js",
     "static/js/2.b078653a.chunk.js",
-    "static/css/main.3617d73d.chunk.css",
+    "static/css/main.92de2ed5.chunk.css",
     "static/js/main.acd87e60.chunk.js"
   ]
 }
