@@ -20,6 +20,7 @@ const MessageHeader = () => {
     db.collection(state).doc(deleteId).update({
       message: "This message was deleted",
     });
+    dispatch(uiActions.setDelete());
   };
   return (
     <div className={classes.MessageHeader}>
