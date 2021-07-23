@@ -8,10 +8,12 @@ import ChatSearch from "../chat search/ChatSearch";
 import Group from "../groups/Group";
 import Message from "../messages/Message";
 import classes from "./Layout.module.css";
+import Loader from "../ui/Loader";
 
 const Layout = () => {
   const dispatch = useDispatch();
   const showState = useSelector((state) => state.ui.open);
+  const loading = useSelector((state) => state.ui.loading);
   const groupTitle = useSelector((state) => state.data.groupTitle);
   const groupOpen = useSelector((state) => state.data.groupOpen);
   const { resizeState } = useResize();
@@ -26,6 +28,7 @@ const Layout = () => {
           snapshot.docs.forEach((doc, i) =>
             dataArray.push({
               ...doc.data(),
+              dataId: doc.id,
               date: doc.data().date.toDate().toLocaleString("en-US", {
                 weekday: "long",
                 year: "numeric",
@@ -39,6 +42,10 @@ const Layout = () => {
               id: i,
             })
           ); //
+          // console.log(dataArray);
+          // if (dataArray.length === 0) {
+          //   throw new Error("Something went wrong");
+          // }
           dispatch(
             dataAction.setGroupLastMess(dataArray[dataArray.length - 1])
           );
@@ -50,57 +57,65 @@ const Layout = () => {
           }, {});
           //
           dispatch(dataAction.storeData(dateToData));
+          dispatch(uiActions.setLoading(false));
         });
     };
     fetch();
-    // .catch((err) => console.log(err));
-    dispatch(uiActions.setLoading(false));
   }, [dispatch, groupTitle]);
 
   return (
-    <div
-      className={classes.Layout}
-      style={{
-        gridTemplateColumns:
-          showState && resizeState > 1041 && 700 < resizeState
-            ? "1fr 1fr 1fr"
-            : null,
-      }}
-    >
-      {resizeState > 700 && (
-        <>
-          <div className={classes.Group}>
-            <Group />
-          </div>
-          <div
-            className={classes.Message}
-            style={{
-              display:
-                showState && resizeState < 1041 && 700 < resizeState
-                  ? "none"
-                  : null,
-            }}
-          >
-            <Message />
-          </div>
-          <div
-            className={classes.ChatSearch}
-            style={{
-              display: showState && 700 < resizeState ? "block" : null,
-            }}
-          >
-            <ChatSearch />
-          </div>
-        </>
+    <>
+      {loading && (
+        <div className={classes.Loader}>
+          <Loader />
+        </div>
       )}
-      {resizeState < 701 && (
-        <>
-          {!groupOpen && <Group />}
-          {!showState && groupOpen && <Message />}
-          {showState && groupOpen && <ChatSearch />}
-        </>
+      {!loading && (
+        <div
+          className={classes.Layout}
+          style={{
+            gridTemplateColumns:
+              showState && resizeState > 1041 && 700 < resizeState
+                ? "1fr 1fr 1fr"
+                : null,
+          }}
+        >
+          {resizeState > 700 && (
+            <>
+              <div className={classes.Group}>
+                <Group />
+              </div>
+              <div
+                className={classes.Message}
+                style={{
+                  display:
+                    showState && resizeState < 1041 && 700 < resizeState
+                      ? "none"
+                      : null,
+                }}
+              >
+                <Message />
+              </div>
+              <div
+                className={classes.ChatSearch}
+                style={{
+                  display: showState && 700 < resizeState ? "block" : null,
+                }}
+              >
+                <ChatSearch />
+              </div>
+            </>
+          )}
+          {resizeState < 701 && (
+            <>
+              {!groupOpen && <Group />}
+              {!showState && groupOpen && <Message />}
+              {showState && groupOpen && <ChatSearch />}
+            </>
+          )}
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

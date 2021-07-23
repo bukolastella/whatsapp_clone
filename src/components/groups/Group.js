@@ -6,15 +6,17 @@ import GroupHeader from "./GroupHeader";
 
 const Group = () => {
   return (
-    <div>
+    <>
       <GroupHeader />
-      <Search />
+      <div className={classes.search}>
+        <Search />
+      </div>
       <div className={classes.GroupRow}>
         <GroupRow groupTitle={"Programming Jokes"} />
         <GroupRow groupTitle={"Array of Hope"} />
         <GroupRow groupTitle={"Controversial Opinions"} />
       </div>
-    </div>
+    </>
   );
 };
 

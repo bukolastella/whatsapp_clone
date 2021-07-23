@@ -40,6 +40,7 @@
 .AuthForm input {
   outline: none;
   border: none;
+  font-size: 1rem;
 }
 
 .AuthDiv {
@@ -75,19 +76,7 @@
   text-transform: capitalize;
   font-size: 1.1rem;
   cursor: pointer;
-  /* margin: 0.5rem 0rem; */
-}
-.AuthBtn2 {
-  width: 200px;
-  padding: 0.5rem;
-  outline: none;
-  border: 1px solid gray;
-  border-radius: 20px;
-  text-transform: capitalize;
-  font-size: 1.1rem;
-  cursor: pointer;
-  background-color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
 .Loader {
   background-color: #131c21d2;

@@ -22,6 +22,7 @@ const GroupHeader = () => {
           localStorage.removeItem("username");
           dispatch(uiActions.isLoggin(false));
           dispatch(uiActions.setUsername(""));
+          window.location.reload();
         }}
       >
         Logout

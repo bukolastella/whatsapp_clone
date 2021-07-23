@@ -206,7 +206,6 @@ const Auth = () => {
           <button className={classes.AuthBtn}>
             {signupState ? "let me in!" : "login"}
           </button>
-          <button className={classes.AuthBtn2}>sign in anonymously</button>
         </form>
       )}
     </div>

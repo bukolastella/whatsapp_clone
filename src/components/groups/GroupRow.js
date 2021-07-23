@@ -7,6 +7,7 @@ import { dataAction } from "../../store/data-slice";
 const GroupRow = (props) => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.data.groupLastMess);
+  const groupState = useSelector((state) => state.data.groupTitle);
   const groupFetch = () => {
     dispatch(dataAction.changeGroupTitle(props.groupTitle));
     dispatch(dataAction.groupOpen(true));
@@ -20,8 +21,14 @@ const GroupRow = (props) => {
       <div className={classes.GroupRowTitle}>{props.groupTitle}</div>
       <span className={classes.GroupRowTime}>{state.time}</span>
       <div className={classes.GroupRowNo}>
-        <span>{`${state.username}:`}</span>
-        <span> {`${state.message}`}</span>
+        <span>
+          {groupState === props.groupTitle ? `${state.username}: ` : "admin: "}
+        </span>
+        <span>
+          {groupState === props.groupTitle
+            ? `${state.message}`
+            : "Try clicking this group"}
+        </span>
       </div>
       <span className={classes.GroupRowArrow}>
         <i className="fas fa-angle-down"></i>

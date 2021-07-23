@@ -29,10 +29,15 @@ const ChatSearch = () => {
       setLoading(false);
     };
     fetch();
+    return () => {
+      setSearchData("");
+      setLoading(false);
+    };
   }, [groupTitle, state]);
   useEffect(() => {
     if (!searchTabOpen) {
       setSearchData("");
+      setstate("");
     }
   }, [searchTabOpen]);
   return (

@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 
 const MessageGroup = (props) => {
   const state = useSelector((state) => state.ui.username);
+  const deleteId = useSelector((state) => state.ui.deleteId);
+
   const today = new Date().toLocaleString("en-US", {
     weekday: "long",
     year: "numeric",
@@ -12,7 +14,12 @@ const MessageGroup = (props) => {
     day: "numeric",
   });
   const reveal = props.data.map((ev) => (
-    <SpeechBubble sent={ev.username === state} key={ev.id} data={ev} />
+    <SpeechBubble
+      sent={ev.username === state}
+      key={ev.id}
+      data={ev}
+      state={deleteId === ev.dataId}
+    />
   ));
   return (
     <>

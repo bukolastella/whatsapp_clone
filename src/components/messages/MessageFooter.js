@@ -12,7 +12,6 @@ const MessageFooter = () => {
     if (state.trim().length === 0) return setstate(" ");
     db.collection(groupTitle).add({
       date: new Date(),
-      sent: true,
       username: username,
       message: state,
     });
