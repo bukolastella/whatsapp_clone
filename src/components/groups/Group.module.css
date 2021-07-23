@@ -1,6 +1,8 @@
 .GroupRow {
   overflow-y: auto;
   height: calc(100vh - 116px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 .search {
   pointer-events: none;
