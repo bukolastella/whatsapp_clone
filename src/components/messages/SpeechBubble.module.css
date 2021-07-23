@@ -54,8 +54,11 @@
   grid-column: 1/-1;
   grid-row: 1/2;
   justify-self: flex-start;
-  color: #888c8f;
-  font-size: 0.7rem;
+  /* color: #888c8f; */
+  font-size: 0.9rem;
+  color: yellowgreen;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
 .SpeechBubbleGrid div {

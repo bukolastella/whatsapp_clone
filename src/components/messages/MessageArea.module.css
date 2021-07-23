@@ -8,7 +8,9 @@
   flex-direction: column;
   overflow-y: auto;
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
+
 @media (max-width: 335px) {
   .MessageArea {
     padding: 1rem 0;

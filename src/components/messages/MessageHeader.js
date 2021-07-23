@@ -1,11 +1,15 @@
 import React from "react";
 import classes from "./MessageHeader.module.css";
 import img from "../../assets/11.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
+import { dataAction } from "../../store/data-slice";
 
 const MessageHeader = () => {
   const dispatch = useDispatch();
+  const state = useSelector((state) => state.data.groupTitle);
+  const groupLastMess = useSelector((state) => state.data.groupLastMess);
+
   const showHandler = () => {
     dispatch(uiActions.openSlide());
   };
@@ -14,17 +18,18 @@ const MessageHeader = () => {
       <span>
         <i
           className="fas fa-arrow-left"
-          onClick={() => window.history.back()}
+          onClick={() => dispatch(dataAction.groupOpen(false))}
         ></i>
       </span>
       <div className={classes.GroupRow}>
         <span className={classes.GroupRowImg}>
           <img src={img} alt="group" />
         </span>
-        <div className={classes.GroupRowTitle}>Array of hope dsddeddefrre</div>
-        <span className={classes.GroupRowTime}>10:45pm</span>
+        <div className={classes.GroupRowTitle}>{state}</div>
+        <span className={classes.GroupRowTime}>{groupLastMess.time}</span>
         <div className={classes.GroupRowNo}>
-          <span>+234345678956: Alrightss than kjjjuiu</span>
+          <span>{`${groupLastMess.username}:`}</span>
+          <span> {`${groupLastMess.message}`}</span>
         </div>
         <span className={classes.GroupRowArrow}>
           <i className="fas fa-angle-down"></i>

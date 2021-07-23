@@ -33,11 +33,11 @@
   padding: 0.5rem;
 }
 .MessageFooter form input {
-  /* background-color: #323739; */
   background-color: transparent;
   padding: 0 0.5rem;
   outline: none;
   border: none;
-  /* color: white; */
   color: black;
+  width: 100%;
+  height: 100%;
 }

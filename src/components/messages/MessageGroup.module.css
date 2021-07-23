@@ -1,0 +1,10 @@
+.MessageAreaDiv {
+  color: white;
+  text-align: center;
+  margin: 1rem 0;
+}
+.MessageAreaDiv span {
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+}

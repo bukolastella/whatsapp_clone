@@ -10,15 +10,9 @@ const Group = () => {
       <GroupHeader />
       <Search />
       <div className={classes.GroupRow}>
-        <GroupRow />
-        <GroupRow />
-        <GroupRow />
-        <GroupRow />
-        {/* <GroupRow />
-        <GroupRow />
-        <GroupRow />
-        <GroupRow />
-        <GroupRow /> */}
+        <GroupRow groupTitle={"Programming Jokes"} />
+        <GroupRow groupTitle={"Array of Hope"} />
+        <GroupRow groupTitle={"Controversial Opinions"} />
       </div>
     </div>
   );

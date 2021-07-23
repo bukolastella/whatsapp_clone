@@ -1,0 +1,19 @@
+.error {
+  background-color: rgba(255, 0, 0, 0.432);
+  border-radius: 10px;
+  border: 1px solid red;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  padding: 1rem;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  color: white;
+}
+.error span {
+  cursor: pointer;
+  font-size: 20px;
+}

@@ -25,7 +25,15 @@
   column-gap: 10px;
   background-color: #2a2f32;
 }
-
+.GroupRowNo span:nth-child(1) {
+  color: yellowgreen;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.GroupRowNo span:nth-child(2) {
+  text-transform: capitalize;
+}
 .GroupRowImg {
   width: 100%;
   border-radius: 50%;

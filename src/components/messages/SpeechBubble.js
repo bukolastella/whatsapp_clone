@@ -17,13 +17,10 @@ const SpeechBubble = (props) => {
             display: props.sent ? "none" : null,
           }}
         >
-          232434
+          {props.data.username}
         </span>
-        <div>
-          I'm speech bubble bhbhjhb yugygggug yyygygyu yuhhhhjhjhgyuyu
-          yughbbhjbhj kl
-        </div>
-        <span className={classes.SpeechBubbleTime}> 3:45 pm</span>
+        <div>{props.data.message}</div>
+        <span className={classes.SpeechBubbleTime}>{props.data.time}</span>
       </div>
     </div>
   );
