@@ -2,6 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/analytics";
 
+//
 var firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "whatsapp-clone-a8adf.firebaseapp.com",
