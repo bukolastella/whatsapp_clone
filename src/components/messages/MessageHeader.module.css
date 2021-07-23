@@ -27,7 +27,7 @@
 }
 .GroupRowNo span:nth-child(1) {
   color: yellowgreen;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   font-weight: bold;
   font-size: 0.9rem;
 }

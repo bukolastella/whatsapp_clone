@@ -7,7 +7,6 @@ import { dataAction } from "../../store/data-slice";
 const GroupRow = (props) => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.data.groupLastMess);
-  console.log(state);
   const groupFetch = () => {
     dispatch(dataAction.changeGroupTitle(props.groupTitle));
     dispatch(dataAction.groupOpen(true));

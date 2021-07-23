@@ -1,10 +1,10 @@
 import React from "react";
 import classes from "./ChatSearchResult.module.css";
-const ChatSearchResult = () => {
+const ChatSearchResult = (props) => {
   return (
     <div className={classes.ChatSearchResult}>
-      <span>sunday</span>
-      <span>frestyling things on point</span>
+      <span>{props.data.username}</span>
+      <span>{props.data.message}</span>
     </div>
   );
 };

@@ -1,3 +1,14 @@
 .ChatSearch {
-  background-color: #131c21af;
+  /* background-color: #131c21af; */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.ChatOverflow {
+  overflow-y: auto;
+  height: calc(100vh - 116px);
+}
+.ChatP {
+  color: gray;
+  margin: 1rem;
+  text-align: center;
 }

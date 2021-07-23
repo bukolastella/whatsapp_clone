@@ -10,13 +10,13 @@ const MessageFooter = () => {
   const saveDataHandler = (event) => {
     event.preventDefault();
     if (state.trim().length === 0) return setstate(" ");
-    console.log("pp");
     db.collection(groupTitle).add({
       date: new Date(),
       sent: true,
       username: username,
       message: state,
     });
+    setstate("");
   };
   return (
     <div className={classes.MessageFooter}>

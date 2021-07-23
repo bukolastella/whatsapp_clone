@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import db from "../../firebase/firebase";
 import useResize from "../../hooks/use-resize";
 import { dataAction } from "../../store/data-slice";
+import { uiActions } from "../../store/ui-slice";
 import ChatSearch from "../chat search/ChatSearch";
 import Group from "../groups/Group";
 import Message from "../messages/Message";
@@ -17,36 +18,43 @@ const Layout = () => {
   //
   useEffect(() => {
     const fetch = async () => {
-      const response = db.collection(groupTitle).orderBy("date");
-      const data = await response.get();
-      const dataArray = [];
-      data.docs.forEach((doc, i) =>
-        dataArray.push({
-          ...doc.data(),
-          date: doc.data().date.toDate().toLocaleString("en-US", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          }),
-          time: doc.data().date.toDate().toLocaleString("en-US", {
-            hour: "2-digit",
-            minute: "2-digit",
-          }),
-          id: i,
-        })
-      );
-      dispatch(dataAction.setGroupLastMess(dataArray[dataArray.length - 1]));
-      //group by date
-      const dateToData = dataArray.reduce((acc, d) => {
-        if (Object.keys(acc).includes(d.date)) return acc;
-        acc[d.date] = dataArray.filter((g) => g.date === d.date);
-        return acc;
-      }, {});
-      //
-      dispatch(dataAction.storeData(dateToData));
+      dispatch(uiActions.setLoading(true));
+      db.collection(groupTitle)
+        .orderBy("date")
+        .onSnapshot((snapshot) => {
+          const dataArray = [];
+          snapshot.docs.forEach((doc, i) =>
+            dataArray.push({
+              ...doc.data(),
+              date: doc.data().date.toDate().toLocaleString("en-US", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              }),
+              time: doc.data().date.toDate().toLocaleString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+              }),
+              id: i,
+            })
+          ); //
+          dispatch(
+            dataAction.setGroupLastMess(dataArray[dataArray.length - 1])
+          );
+          //group by date
+          const dateToData = dataArray.reduce((acc, d) => {
+            if (Object.keys(acc).includes(d.date)) return acc;
+            acc[d.date] = dataArray.filter((g) => g.date === d.date);
+            return acc;
+          }, {});
+          //
+          dispatch(dataAction.storeData(dateToData));
+        });
     };
     fetch();
+    // .catch((err) => console.log(err));
+    dispatch(uiActions.setLoading(false));
   }, [dispatch, groupTitle]);
 
   return (

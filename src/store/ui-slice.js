@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
   name: "ui",
-  initialState: { open: false, login: false, username: "" },
+  initialState: { open: false, login: false, username: "", loading: false },
   reducers: {
     openSlide(state) {
       state.open = true;
@@ -15,6 +15,9 @@ const uiSlice = createSlice({
     },
     setUsername(state, action) {
       state.username = action.payload;
+    },
+    setLoading(state, action) {
+      state.loading = action.payload;
     },
   },
 });

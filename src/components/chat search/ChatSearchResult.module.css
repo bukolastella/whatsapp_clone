@@ -6,6 +6,10 @@
   padding: 1rem;
   border-bottom: 1px solid #30383d;
 }
+.ChatSearchResult span:nth-child(1) {
+  color: greenyellow;
+  text-transform: none;
+}
 .ChatSearchResult span:nth-last-child(1) {
   margin-left: 1rem;
 }

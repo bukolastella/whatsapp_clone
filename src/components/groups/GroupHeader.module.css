@@ -5,6 +5,7 @@
   /* background-color: #00bfa5; */
   background-color: #2a2f32;
   color: #898e91;
+  height: 64px;
 }
 .GroupHeader span {
   display: flex;
@@ -19,9 +20,11 @@
   margin-left: 0.5rem;
   color: white;
   text-transform: capitalize;
+  height: 100%;
 }
 .GroupHeader span div span:nth-child(2) {
   color: greenyellow;
+  text-transform: none;
 }
 .GroupFlex {
   display: flex;
